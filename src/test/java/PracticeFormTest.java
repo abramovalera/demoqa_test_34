@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class PracticeFormTest {
     @Test
     void successLogin() {
-        Configuration.holdBrowserOpen = true;
+        Configuration.holdBrowserOpen = false;
 
         open("https://demoqa.com/automation-practice-form");
         $("#firstName").setValue("Valery");
@@ -28,10 +28,8 @@ public class PracticeFormTest {
         $("#hobbies-checkbox-1").parent().click();
         $("#uploadPicture").uploadFile(new File("src/test/resources/img/cat.jpg"));
         $("#currentAddress").setValue("ул. Боброва д. 001");
-
         $("#state").click();
         $(byText("Haryana")).click();
-
         $("#city").click();
         $(byText("Karnal")).click();
     }
